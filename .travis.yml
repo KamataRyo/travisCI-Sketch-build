@@ -1,16 +1,19 @@
 language: node_js
+
 node_js:
   - '0.12'
   - '0.11'
   - '0.10'
+
 sudo: required
 
 before_script:
   - wget http://www.sketchapp.com/download/sketch.zip
   - unzip sketch.zip
-  - ./Sketch.app/Contents/Resources/sketchtool/install.sh
+  - sudo ./Sketch.app/Contents/Resources/sketchtool/install.sh
 
 script:
   - ./node_modules/gulp/bin/gulp.js sketch
- after_success:
-  - ls -la
+
+after_success:
+  - 'ls -la'
